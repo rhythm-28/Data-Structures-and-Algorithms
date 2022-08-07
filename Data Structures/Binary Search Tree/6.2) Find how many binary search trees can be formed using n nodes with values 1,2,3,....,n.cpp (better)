@@ -1,0 +1,33 @@
+// Find how many binary search trees can be formed using n nodes with values 1,2,3,....,n
+
+// Catalan number
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int catalan(int n, vector<int> &dp)
+{
+    if (n == 0)
+        return 1;
+
+    if (dp[n] != -1)
+        return dp[n];
+
+    int sum = 0;
+    for (int i = 1; i <= n; i++)
+        sum += (catalan(i - 1, dp) * catalan(n - i, dp));
+
+    return dp[n]=sum;
+}
+
+int main()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    
+    int n;
+    vector<int> dp(n + 1, -1);
+    cin >> n;
+    cout << catalan(n, dp);
+    return 0;
+}

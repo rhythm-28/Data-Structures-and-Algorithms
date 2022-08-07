@@ -1,0 +1,4 @@
+# depslib dependency file v1.0
+1587448073 source:c:\users\rhythm bhatia\desktop\programs\algorithms\binary search  [o(logn)]\binary search (recursively)  [o(logn)]\main.cpp
+	<stdio.h>
+
